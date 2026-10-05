@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHALE INTERIOR — Kiến Trúc Phóng Khoáng · Nội Thất Hữu Cơ Đẳng Cấp</title>
+  <meta name="description" content="Whale Interior — Không gian sống đương đại mang hơi thở đại dương. Trải nghiệm không gian tương tác Room Explorer, xưởng chế tác 1.500m², bảo hành 5 năm.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Preloader: The Whale Ascent -->
+  <div id="preloader">
+    <div class="preloader-whale">
+      <svg viewBox="0 0 64 40" width="80" height="50" fill="currentColor">
+        <path d="M32 20C26 8 10 2 0 0C6 14 16 26 28 32C30 33 34 33 36 32C48 26 58 14 64 0C54 2 38 8 32 20Z"/>
+      </svg>
+    </div>
+    <div class="preloader-brand">WHALE</div>
+    <div class="preloader-sub">INTERIOR & ARCHITECTURE</div>
+    <div class="preloader-bar-wrap">
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-info">
+        <span class="topbar-tag">WHALE CRAFT FACTORY</span>
+        <a href="tel:0988223344">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0988 223 344
+        </a>
+        <a href="mailto:contact@whaleinterior.vn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@whaleinterior.vn
+        </a>
+      </div>
+      <div class="topbar-socials">
+        <span>Xưởng mộc trực tiếp 1.500m² — Kiểm soát 100% chất lượng từ gốc</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <!-- Left Navigation -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Trang chủ</a>
+        <a href="ve-chung-toi.html" class="nav-link">Giới thiệu & Xưởng</a>
+        <a href="du-an.html" class="nav-link">Công trình</a>
+      </nav>
+
+      <!-- Center Brand Logo -->
+      <a href="index.html" class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 64 40" width="40" height="26" fill="currentColor">
+            <path d="M32 20C26 8 10 2 0 0C6 14 16 26 28 32C30 33 34 33 36 32C48 26 58 14 64 0C54 2 38 8 32 20Z"/>
+          </svg>
+        </div>
+        <span class="brand-title">WHALE</span>
+        <span class="brand-sub">INTERIOR & ARCHITECTURE</span>
+      </a>
+
+      <!-- Right Navigation & Actions -->
+      <div class="header-actions">
+        <nav class="nav-links">
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="kien-thuc.html" class="nav-link">Kiến thức</a>
+          <a href="lien-he.html" class="nav-link">Liên hệ</a>
+        </nav>
+
+        <!-- Cart Button -->
+        <button class="btn-cart-trigger" id="cartOpenBtn" title="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+        </button>
+
+        <!-- Consultation Button -->
+        <button class="btn-header-cta open-consult-modal">
+          <span>ĐẶT LỊCH HẸN</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </button>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileNavOverlay" class="cart-drawer-overlay"></div>
+  <div id="mobileNavDrawer" class="cart-drawer">
+    <div class="cart-drawer-head">
+      <h3>WHALE INTERIOR</h3>
+      <button onclick="document.getElementById('mobileNavDrawer').classList.remove('active'); document.getElementById('mobileNavOverlay').classList.remove('active');" style="font-size:1.5rem;">✕</button>
+    </div>
+    <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+      <a href="index.html" style="font-weight:700; color:var(--primary); font-size:1.1rem;">Trang chủ</a>
+      <a href="ve-chung-toi.html" style="font-weight:600; color:var(--text-main);">Giới thiệu & Xưởng</a>
+      <a href="du-an.html" style="font-weight:600; color:var(--text-main);">Công trình tiêu biểu</a>
+      <a href="shop.html" style="font-weight:600; color:var(--text-main);">Bộ sưu tập Shop</a>
+      <a href="kien-thuc.html" style="font-weight:600; color:var(--text-main);">Cẩm nang kiến thức</a>
+      <a href="lien-he.html" style="font-weight:600; color:var(--text-main);">Liên hệ tư vấn</a>
+      <hr style="border:none; border-top:1px solid var(--border-color); margin: 10px 0;">
+      <div>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Hotline 24/7:</p>
+        <strong style="font-size:1.2rem; color:var(--accent-gold);">0988 223 344</strong>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Cinematic Section (Editorial Typography Sōl Haus Style) -->
+    <section class="hero" id="hero">
+      <div class="hero-slider">
+        <div class="hero-slide active">
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80" alt="Whale Interior Luxury Living Room">
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80" alt="Modern Ocean Organic Interior">
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80" alt="Penthouse Contemporary Stair & Living">
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1920&q=80" alt="Luxury Master Suite Minimal Wood">
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <span class="hero-badge reveal">KIẾN TRÚC & NỘI THẤT HỮU CƠ ĐẲNG CẤP</span>
+        <h1 class="hero-title reveal stagger-1">
+          VẬT LIỆU. <span class="italic-serif">Tĩnh Tại.</span> KHÔNG GIAN.
+        </h1>
+        <p class="hero-desc reveal stagger-2">Whale Interior là boutique studio kiến tạo những không gian sống giàu chiều sâu cảm xúc, ngập tràn ánh sáng tự nhiên và chất liệu mộc bản sắc — nơi nghệ thuật đại dương hòa quyện cùng công năng sống thượng lưu.</p>
+        
+        <div class="hero-actions reveal stagger-3">
+          <a href="#roomExplorer" class="btn-primary">
+            <span>TRẢI NGHIỆM PHÒNG TƯƠNG TÁC</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <button class="btn-secondary open-consult-modal">
+            <span>NHẬN BÁO GIÁ XƯỞNG</span>
+          </button>
+        </div>
+
+        <div class="hero-tags reveal stagger-4">
+          <div class="hero-tag-item"><span>✦</span> Kiến Trúc Ven Biển</div>
+          <div class="hero-tag-item"><span>✦</span> Xưởng Mộc Whale Craft</div>
+          <div class="hero-tag-item"><span>✦</span> Chuẩn Xác 98% Bản Vẽ 3D</div>
+          <div class="hero-tag-item"><span>✦</span> Bảo Hành 5 Năm</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,50 L1200,120 L0,120 Z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <!-- Animated Metrics Strip -->
+    <div class="container">
+      <div class="metrics-strip reveal">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-num" data-target="12" data-suffix="+">0<span>+</span></div>
+            <div class="metric-label">Năm Kiến Tạo & Đồng Hành</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-num" data-target="350" data-suffix="+">0<span>+</span></div>
+            <div class="metric-label">Công Trình Bàn Giao Hoàn Hảo</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-num" data-target="1500" data-suffix="m²">0<span>m²</span></div>
+            <div class="metric-label">Xưởng Sản Xuất Whale Craft</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-num" data-target="100" data-suffix="%">0<span>%</span></div>
+            <div class="metric-label">Cam Kết Tiến Độ Hợp Đồng</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infinite Marquee Ticker (Editorial Brand Statement) -->
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <div class="marquee-item">WHALE INTERIOR <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">ORGANIC ARCHITECTURE <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">TĨNH LẶNG BIỂN SÂU <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">XƯỞNG CHẾ TÁC 1.500M² <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">DESIGN WITH INTENTION <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">CHUẨN XÁC 98% BẢN VẼ <span class="marquee-dot">✦</span></div>
+        <!-- Duplicated for seamless loop -->
+        <div class="marquee-item">WHALE INTERIOR <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">ORGANIC ARCHITECTURE <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">TĨNH LẶNG BIỂN SÂU <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">XƯỞNG CHẾ TÁC 1.500M² <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">DESIGN WITH INTENTION <span class="marquee-dot">✦</span></div>
+        <div class="marquee-item">CHUẨN XÁC 98% BẢN VẼ <span class="marquee-dot">✦</span></div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         INTERACTIVE ROOM EXPLORER & SHOPPABLE HOTSPOTS (INSPIRATION: ROOMSKETCH)
+         ======================================================================= -->
+    <section class="room-explorer-section" id="roomExplorer">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">TRẢI NGHIỆM KHÔNG GIAN TƯƠNG TÁC</span>
+          <h2 class="section-title">Whale Sanctuary — Chạm & Khám Phá</h2>
+          <p class="section-desc">Rê chuột hoặc chạm vào các điểm ghim tròn để khám phá chi tiết từng món đồ nội thất độc bản được chế tác tại xưởng Whale Craft trong không gian thực tế.</p>
+        </div>
+
+        <div class="room-stage-wrap reveal-scale">
+          <!-- Room Canvas Image -->
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80" alt="Interactive Living Room" id="roomExplorerImg" class="room-canvas-img">
+
+          <!-- Hotspot 1: Armchair (Bottom Left) -->
+          <div class="hotspot" style="top: 68%; left: 24%;">
+            <div class="hotspot-dot">
+              <div class="hotspot-dot-inner"></div>
+            </div>
+            <div class="hotspot-card">
+              <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=500&q=80" class="hotspot-card-thumb" alt="Whale Organic Armchair">
+              <div class="hotspot-card-badge">GHẾ THƯ GIÃN</div>
+              <h4 class="hotspot-card-title">Whale Organic Armchair</h4>
+              <div class="hotspot-card-material">Gỗ sồi trắng Bắc Mỹ, nỉ Bỉ cao cấp</div>
+              <div class="hotspot-card-footer">
+                <span class="hotspot-card-price">14.500.000 đ</span>
+                <button class="btn-hotspot-add">+ Thêm vào giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 2: Marble Coffee Table (Center) -->
+          <div class="hotspot" style="top: 76%; left: 52%;">
+            <div class="hotspot-dot">
+              <div class="hotspot-dot-inner"></div>
+            </div>
+            <div class="hotspot-card">
+              <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80" class="hotspot-card-thumb" alt="Ocean Ripple Table">
+              <div class="hotspot-card-badge">BÀN TRÀ TRUNG TÂM</div>
+              <h4 class="hotspot-card-title">Ocean Ripple Table</h4>
+              <div class="hotspot-card-material">Mặt đá Marble Ý & Khung đồng thau xước</div>
+              <div class="hotspot-card-footer">
+                <span class="hotspot-card-price">18.900.000 đ</span>
+                <button class="btn-hotspot-add">+ Thêm vào giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 3: Sofa Curve (Right Center) -->
+          <div class="hotspot" style="top: 64%; left: 74%;">
+            <div class="hotspot-dot">
+              <div class="hotspot-dot-inner"></div>
+            </div>
+            <div class="hotspot-card">
+              <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=500&q=80" class="hotspot-card-thumb" alt="Whale Curve Sofa">
+              <div class="hotspot-card-badge">SOFA PHÒNG KHÁCH</div>
+              <h4 class="hotspot-card-title">Whale Curve 3-Seater</h4>
+              <div class="hotspot-card-material">Khung sồi Nga, đệm lông vũ mềm mại</div>
+              <div class="hotspot-card-footer">
+                <span class="hotspot-card-price">42.500.000 đ</span>
+                <button class="btn-hotspot-add">+ Thêm vào giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 4: Brass Floor Lamp (Right Top) -->
+          <div class="hotspot" style="top: 38%; left: 82%;">
+            <div class="hotspot-dot">
+              <div class="hotspot-dot-inner"></div>
+            </div>
+            <div class="hotspot-card">
+              <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80" class="hotspot-card-thumb" alt="Nautilus Brass Lamp">
+              <div class="hotspot-card-badge">ĐÈN THIẾT KẾ</div>
+              <h4 class="hotspot-card-title">Nautilus Brass Floor Lamp</h4>
+              <div class="hotspot-card-material">Đồng thau đúc thủ công & Chao vải linen</div>
+              <div class="hotspot-card-footer">
+                <span class="hotspot-card-price">9.500.000 đ</span>
+                <button class="btn-hotspot-add">+ Thêm vào giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot 5: Fluted Console (Center Wall) -->
+          <div class="hotspot" style="top: 45%; left: 42%;">
+            <div class="hotspot-dot">
+              <div class="hotspot-dot-inner"></div>
+            </div>
+            <div class="hotspot-card">
+              <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=500&q=80" class="hotspot-card-thumb" alt="Fluted Wave Credenza">
+              <div class="hotspot-card-badge">TỦ KỆ VÁCH ỐP</div>
+              <h4 class="hotspot-card-title">Fluted Wave Console</h4>
+              <div class="hotspot-card-material">Gỗ sồi uốn cong CNC phay sọc nước</div>
+              <div class="hotspot-card-footer">
+                <span class="hotspot-card-price">22.800.000 đ</span>
+                <button class="btn-hotspot-add">+ Thêm vào giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Bar inside Explorer -->
+          <div class="room-explorer-bar">
+            <div class="room-bar-cart" id="roomCartTrigger">
+              <span>🛒</span> Giỏ đồ tương tác: <strong id="roomCartTotal" style="color:var(--accent-gold-light);">0 đ</strong>
+            </div>
+            <button class="btn-room-compare" id="btnRoomToggleCompare">
+              <span>⚖️</span> SO SÁNH HIỆN TRẠNG / 3D
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         EDITORIAL PORTFOLIO CAROUSEL (INSPIRATION: SŌL HAUS "IMPRESSIONS THAT ENDURE")
+         ======================================================================= -->
+    <section class="portfolio-editorial-section" id="projects">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 50px;">
+          <span class="section-label">BỘ SƯU TẬP TUYỂN CHỌN</span>
+          <h2 class="section-title">Công Trình Vượt Chuẩn Mực Thời Gian</h2>
+          <p class="section-desc">Mỗi công trình là một tác phẩm dung hòa giữa cấu trúc hình khối, ánh sáng khuếch tán và vật liệu bản địa bền vững.</p>
+        </div>
+
+        <div class="editorial-slider-wrap reveal-scale">
+          <div class="editorial-slide-image-col">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Villa Ocean Horizon" id="editorialSlideImg" class="editorial-slide-img">
+          </div>
+
+          <div class="editorial-slide-info">
+            <div class="editorial-slide-meta">
+              <span id="editorialSlideLoc" style="color:var(--accent-gold); font-weight:700;">NHA TRANG · KHÁNH HÒA</span>
+              <span id="editorialSlideNum" style="font-family:var(--font-serif); font-size:1.1rem; color:var(--primary); font-weight:700;">01 / 04</span>
+            </div>
+
+            <h3 class="editorial-slide-title" id="editorialSlideTitle">VILLA OCEAN HORIZON</h3>
+            <p class="editorial-slide-desc" id="editorialSlideDesc">Đường nét hữu cơ bionic mềm mại lấy cảm hứng từ đại dương, kết hợp hoàn mỹ giữa gỗ Óc chó FAS Bắc Mỹ và đá cẩm thạch trắng Hy Lạp. Không gian mở ngập tràn ánh nắng và gió biển tự nhiên.</p>
+
+            <div class="material-swatches-box">
+              <div class="material-swatches-label">BẢNG VẬT LIỆU ĐẶC TRƯNG</div>
+              <div class="material-swatches-text" id="editorialSlideMaterials">Gỗ Óc Chó FAS, Đá Quartz Calacatta, Vải Lanh Bỉ Tự Nhiên & Kính Tràn Viền</div>
+            </div>
+
+            <div class="editorial-slider-nav">
+              <a href="du-an.html" class="service-link">XEM CHI TIẾT DỰ ÁN →</a>
+              <div class="slider-nav-btns">
+                <button class="btn-slider-arrow" id="btnEditorialPrev" title="Công trình trước">←</button>
+                <button class="btn-slider-arrow" id="btnEditorialNext" title="Công trình tiếp theo">→</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         DARK WOOD SERVICES MATRIX (INSPIRATION: SŌL HAUS "DESIGN THAT RESONATES")
+         ======================================================================= -->
+    <section class="services-dark-section">
+      <div class="container">
+        <div class="services-dark-grid">
+          <div class="reveal-left">
+            <span class="section-label" style="color:var(--accent-gold-light);">DỊCH VỤ TOÀN DIỆN</span>
+            <h2 class="section-title text-white">
+              Thiết Kế Chạm Vào Cảm Xúc.
+            </h2>
+            <p class="section-desc text-light">
+              Chúng tôi mang đến giải pháp trọn vẹn hơn một bản vẽ thông thường — một quy trình khép kín từ ý niệm kiến trúc, sản xuất đồ gỗ tại xưởng độc quyền cho tới nghệ thuật bài trí không gian.
+            </p>
+            <button class="btn-primary open-consult-modal">
+              <span>ĐẶT LỊCH TƯ VẤN CÙNG KTS</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="services-matrix reveal-right">
+            <!-- 01 -->
+            <div class="service-matrix-card">
+              <div class="service-card-num">01 / ARCHITECTURE</div>
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80" class="service-card-thumb" alt="Thiết kế kiến trúc">
+              <h4 class="service-card-title">Thiết Kế Không Gian</h4>
+              <p class="service-card-desc">Bản vẽ 2D/3D giàu chất nghệ thuật, bám sát lối sống và vi khí hậu nhiệt đới.</p>
+            </div>
+
+            <!-- 02 -->
+            <div class="service-matrix-card">
+              <div class="service-card-num">02 / CRAFTSMANSHIP</div>
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80" class="service-card-thumb" alt="Xưởng Whale Craft">
+              <h4 class="service-card-title">Xưởng Whale Craft</h4>
+              <p class="service-card-desc">Quy mô 1.500m², máy CNC Đức 5 trục, gỗ tự nhiên sấy chuẩn 8–12%.</p>
+            </div>
+
+            <!-- 03 -->
+            <div class="service-matrix-card">
+              <div class="service-card-num">03 / SUPERVISION</div>
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" class="service-card-thumb" alt="Thi công xây dựng">
+              <h4 class="service-card-title">Thi Công Trọn Gói</h4>
+              <p class="service-card-desc">Kỹ sư trưởng giám sát hiện trường 24/7, cam kết tiến độ có điều khoản phạt rõ ràng.</p>
+            </div>
+
+            <!-- 04 -->
+            <div class="service-matrix-card">
+              <div class="service-card-num">04 / STYLING</div>
+              <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80" class="service-card-thumb" alt="Bài trí nội thất">
+              <h4 class="service-card-title">Bài Trí & Nghệ Thuật</h4>
+              <p class="service-card-desc">Tạo lập ánh sáng 3 lớp layering, lựa chọn phụ kiện đồng thau và tác phẩm decor thủ công.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After Interactive Comparison Slider -->
+    <section class="before-after-section">
+      <svg class="whale-watermark" viewBox="0 0 64 40" fill="currentColor">
+        <path d="M32 20C26 8 10 2 0 0C6 14 16 26 28 32C30 33 34 33 36 32C48 26 58 14 64 0C54 2 38 8 32 20Z"/>
+      </svg>
+
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">CHẤT LƯỢNG THỰC TẾ ĐỘT PHÁ</span>
+          <h2 class="section-title">Từ Bản Vẽ 3D Đến Hiện Thực Bàn Giao</h2>
+          <p class="section-desc">Kéo thanh trượt để so sánh trực quan giữa bản vẽ thiết kế 3D và không gian hoàn thiện thực tế tại công trình Villa Ocean Horizon (Đạt độ chuẩn xác trên 98%).</p>
+        </div>
+
+        <div class="before-after-card reveal-scale">
+          <!-- After (Actual Construction) -->
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Thực tế bàn giao" class="ba-image">
+          <span class="ba-badge ba-badge-after">THỰC TẾ BÀN GIAO</span>
+
+          <!-- Before (3D Render) -->
+          <div class="ba-before">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Phối cảnh 3D">
+            <span class="ba-badge ba-badge-before">BẢN VẼ PHỐI CẢNH 3D</span>
+          </div>
+
+          <!-- Handle -->
+          <div class="ba-slider-handle">↔</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & Difference Section -->
+    <section class="philosophy-section">
+      <div class="container">
+        <div class="philosophy-grid">
+          <div class="philosophy-images reveal-left">
+            <div class="philosophy-img-main">
+              <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=900&q=80" alt="Whale Craft Woodworking Workshop">
+            </div>
+            <div class="philosophy-badge-card">
+              <div class="badge-card-icon">⚓</div>
+              <div class="badge-card-title">Xưởng Whale Craft</div>
+              <div class="badge-card-desc">Chủ động 100% công nghệ sản xuất CNC & mộc thủ công, tiết kiệm 25–35% chi phí trung gian.</div>
+            </div>
+          </div>
+
+          <div class="philosophy-content reveal-right">
+            <span class="section-label">TRIẾT LÝ SÁNG TẠO</span>
+            <h2 class="section-title">Vẻ đẹp đến từ sự tĩnh tại và chuẩn xác tuyệt đối.</h2>
+            <p class="section-desc">Khác biệt với những đơn vị chỉ dừng lại ở bản vẽ phối cảnh 3D, <strong>Whale Interior</strong> khởi nguồn từ lòng say mê chất liệu tự nhiên và xưởng sản xuất cơ khí - mộc mỹ nghệ Whale Craft. Chúng tôi tin rằng không gian sống hoàn hảo phải có sự đối thoại nhịp nhàng giữa thẩm mỹ kiến trúc phóng khoáng như đại dương và độ bền bỉ trường tồn cùng năm tháng.</p>
+            
+            <div class="features-list">
+              <div class="feature-box">
+                <div class="feature-icon-circle">01</div>
+                <div>
+                  <h4>Tự sản xuất tại xưởng</h4>
+                  <p>Kiểm soát từng khối gỗ óc chó, sồi Mỹ, đá thạch anh tự nhiên không qua trung gian.</p>
+                </div>
+              </div>
+              <div class="feature-box">
+                <div class="feature-icon-circle">02</div>
+                <div>
+                  <h4>Bản vẽ chi tiết 1:1</h4>
+                  <p>Thi công thực tế chuẩn xác tới từng milimet, sắc sảo từ góc vát đến đường sơn phủ.</p>
+                </div>
+              </div>
+              <div class="feature-box">
+                <div class="feature-icon-circle">03</div>
+                <div>
+                  <h4>Minh bạch tài chính</h4>
+                  <p>Bóc tách dự toán rõ ràng, cam kết không phát sinh bất kỳ chi phí ngoài hợp đồng.</p>
+                </div>
+              </div>
+              <div class="feature-box">
+                <div class="feature-icon-circle">04</div>
+                <div>
+                  <h4>Bảo hành 5 năm</h4>
+                  <p>Đội ngũ bảo trì định kỳ tận tâm, đồng hành trọn đời cùng tổ ấm của quý khách.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="ve-chung-toi.html" class="btn-primary">
+              <span>TÌM HIỂU VỀ XƯỞNG & ĐỘI NGŨ</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Cost Calculator -->
+    <section class="calculator-section" id="du-toan">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 40px;">
+          <span class="section-label" style="color:var(--accent-gold-light);">DỰ TOÁN TRỰC TUYẾN</span>
+          <h2 class="section-title text-white">Tính Nhanh Ngân Sách Dự Kiến</h2>
+          <p class="section-desc text-light">Công cụ minh bạch giúp gia chủ lập kế hoạch tài chính chính xác trước khi khởi công.</p>
+        </div>
+
+        <div class="calculator-box reveal-scale">
+          <div class="calculator-grid">
+            <div class="calc-inputs">
+              <div class="calc-form-group">
+                <label class="calc-label">1. Diện tích sàn cần thi công (m²):</label>
+                <input type="number" id="calcArea" class="calc-input" value="120" min="20" max="2000">
+              </div>
+
+              <div class="calc-form-group">
+                <label class="calc-label">2. Loại hình không gian:</label>
+                <select id="calcType" class="calc-select">
+                  <option value="2500000">Căn hộ chung cư cao cấp (2.5tr/m²)</option>
+                  <option value="3200000" selected>Nhà phố hiện đại (3.2tr/m²)</option>
+                  <option value="4500000">Biệt thự đơn lập / Song lập (4.5tr/m²)</option>
+                  <option value="5800000">Penthouse / Villa View Biển (5.8tr/m²)</option>
+                </select>
+              </div>
+
+              <div class="calc-form-group">
+                <label class="calc-label">3. Gói vật liệu nội thất:</label>
+                <select id="calcPackage" class="calc-select">
+                  <option value="1.0">Tiêu chuẩn: MDF chống ẩm An Cường cao cấp</option>
+                  <option value="1.35" selected>Cao cấp: Gỗ Sồi tự nhiên kết hợp đá Quartz</option>
+                  <option value="1.8">Thượng hạng: 100% Gỗ Óc Chó Bắc Mỹ & Da Bò Ý</option>
+                </select>
+              </div>
+
+              <button id="btnCalculate" class="btn-primary" style="width:100%; justify-content:center; margin-top:10px;">
+                CẬP NHẬT DỰ TOÁN NGAY
+              </button>
+            </div>
+
+            <div class="calc-result-col">
+              <div class="calc-result-card">
+                <div class="calc-result-title">CHI PHÍ NỘI THẤT ƯỚC TÍNH</div>
+                <div class="calc-result-val" id="calcResultValue">518 <span>Triệu VNĐ</span></div>
+                <p class="calc-result-note">* Đã bao gồm trọn gói: Thiết kế 3D, sản xuất trực tiếp tại xưởng Whale Craft, vận chuyển & lắp đặt hoàn thiện không phát sinh.</p>
+                <button class="btn-primary open-consult-modal" style="width:100%; justify-content:center;">
+                  NHẬN BẢNG BÓC TÁCH CHI TIẾT
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Knowledge / Blog Section -->
+    <section class="blog-section">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">CẨM NANG & KINH NGHIỆM</span>
+          <h2 class="section-title">Kiến Thức Xây Dựng & Xu Hướng Nội Thất</h2>
+          <p class="section-desc">Tổng hợp những đúc kết thực chiến hơn 12 năm từ các kiến trúc sư trưởng Whale Interior.</p>
+        </div>
+
+        <div class="blog-grid">
+          <div class="blog-card reveal stagger-1">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80" alt="Ocean Organic Design Trend">
+              <span class="blog-cat-badge">XU HƯỚNG 2026</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">5 phút đọc · 15.06.2026</div>
+              <h3 class="blog-title">Xu hướng nội thất Organic Coastal: Khi đại dương thổi hồn vào không gian</h3>
+              <p class="blog-excerpt">Vì sao những đường nét cong mềm mại và bảng màu trầm ấm tự nhiên đang chinh phục giới tinh hoa biệt thự biển.</p>
+              <a href="kien-thuc.html" class="blog-readmore">Đọc bài viết →</a>
+            </div>
+          </div>
+
+          <div class="blog-card reveal stagger-2">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80" alt="Material Selection">
+              <span class="blog-cat-badge">VẬT LIỆU CAO CẤP</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">7 phút đọc · 08.06.2026</div>
+              <h3 class="blog-title">Gỗ óc chó Bắc Mỹ và gỗ sồi: Lựa chọn nào tối ưu cho khí hậu ven biển?</h3>
+              <p class="blog-excerpt">Phân tích khả năng chịu ẩm, độ co ngót và phương pháp xử lý sấy tẩm công nghệ cao tại xưởng Whale Craft.</p>
+              <a href="kien-thuc.html" class="blog-readmore">Đọc bài viết →</a>
+            </div>
+          </div>
+
+          <div class="blog-card reveal stagger-3">
+            <div class="blog-thumb">
+              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=700&q=80" alt="Budget Planning Guide">
+              <span class="blog-cat-badge">KINH NGHIỆM</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">6 phút đọc · 28.05.2026</div>
+              <h3 class="blog-title">7 sai lầm thường gặp khiến chi phí thi công nội thất bị đội lên 40%</h3>
+              <p class="blog-excerpt">Bài học kinh nghiệm từ khâu chọn nhà thầu không có xưởng đến thiếu sót trong hợp đồng bóc tách vật tư.</p>
+              <a href="kien-thuc.html" class="blog-readmore">Đọc bài viết →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: 40px;">
+          <a href="kien-thuc.html" class="btn-primary">
+            <span>XEM TẤT CẢ BÀI VIẾT</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner">
+      <div class="container cta-banner-content reveal">
+        <h2>Sẵn Sàng Tạo Nên Không Gian Sống Vượt Thời Gian?</h2>
+        <p>Đội ngũ Kiến trúc sư Whale Interior luôn sẵn sàng lắng nghe câu chuyện và hiện thực hóa ngôi nhà trong mơ của bạn.</p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <button class="btn-primary open-consult-modal">
+            ĐẶT LỊCH TƯ VẤN NGAY
+          </button>
+          <a href="tel:0988223344" class="btn-secondary">
+            GỌI HOTLINE: 0988 223 344
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="align-items:flex-start; text-align:left; padding:0; margin-bottom:20px;">
+            <span class="brand-title" style="color:#fff;">WHALE</span>
+            <span class="brand-sub">INTERIOR & ARCHITECTURE</span>
+          </div>
+          <p>Thiết kế và thi công nội thất cao cấp cho những không gian sống tinh tế. Tối giản · Phóng khoáng · Tĩnh tại · Trường tồn.</p>
+          <p style="font-size:0.85rem; color:var(--text-light);">Sở hữu xưởng sản xuất trực tiếp 1.500m² tại Khánh Hòa & TP.HCM. Không qua trung gian, giá xưởng minh bạch.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>ĐIỀU HƯỚNG</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="ve-chung-toi.html">Về chúng tôi & Xưởng</a></li>
+            <li><a href="du-an.html">Dự án công trình</a></li>
+            <li><a href="shop.html">Shop đồ nội thất</a></li>
+            <li><a href="kien-thuc.html">Cẩm nang kiến thức</a></li>
+            <li><a href="lien-he.html">Liên hệ tư vấn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>PHONG CÁCH</h4>
+          <ul class="footer-links">
+            <li><a href="du-an.html">Biệt thự ven biển</a></li>
+            <li><a href="du-an.html">Penthouse & Duplex</a></li>
+            <li><a href="du-an.html">Organic Contemporary</a></li>
+            <li><a href="du-an.html">Modern Minimalist</a></li>
+            <li><a href="du-an.html">Tân cổ điển Luxury</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>LIÊN HỆ TRỰC TIẾP</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <div>Showroom & Trụ sở: Số 88 Đường Trần Phú, Lộc Thọ, TP. Nha Trang, Khánh Hòa</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>🏭</span>
+            <div>Xưởng Whale Craft: Cụm Công Nghiệp Diên Phú, Diên Khánh, Khánh Hòa</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>📞</span>
+            <div>Hotline: <strong style="color:#fff;">0988 223 344</strong> (24/7)</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <div>Email: contact@whaleinterior.vn</div>
+          </div>
+          <div class="footer-contact-item">
+            <span>⏰</span>
+            <div>Giờ làm việc: 08:00 - 18:30 (Thứ 2 - Thứ 7)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 WHALE INTERIOR. All rights reserved. Trải nghiệm kiến trúc & nội thất đẳng cấp đại dương.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#">Chính sách bảo mật</a>
+          <a href="#">Điều khoản dịch vụ</a>
+          <a href="#">Chính sách bảo hành 5 năm</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Buttons & Audio Synthesizer -->
+  <div class="floating-contact">
+    <button class="float-btn float-audio" id="oceanAudioToggle" title="Bật âm thanh tĩnh lặng đại dương (Whale Soundscape)">
+      🌊
+    </button>
+    <a href="#du-toan" class="float-btn float-calc" title="Dự toán chi phí">
+      🧮
+    </a>
+    <a href="https://zalo.me/0988223344" target="_blank" class="float-btn float-zalo" title="Chat Zalo">
+      💬
+    </a>
+    <a href="tel:0988223344" class="float-btn float-phone" title="Gọi Hotline">
+      📞
+    </a>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-head">
+      <h3>Giỏ Hàng Của Bạn</h3>
+      <button id="closeCartBtn" style="font-size:1.5rem; color:var(--text-main);">✕</button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="cart-drawer-foot">
+      <div class="cart-total-row">
+        <span>TỔNG CỘNG:</span>
+        <span class="text-gold" id="cartTotalPrice">0 đ</span>
+      </div>
+      <button class="btn-primary open-consult-modal" style="width:100%; justify-content:center;">
+        TIẾN HÀNH ĐẶT HÀNG / TƯ VẤN
+      </button>
+    </div>
+  </div>
+
+  <!-- Consultation Booking Modal -->
+  <div class="modal-overlay" id="consultModalOverlay"></div>
+  <div class="modal-overlay" id="consultModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeConsultModal">✕</button>
+      <div style="padding: 40px;">
+        <span class="section-label">ĐĂNG KÝ KHẢO SÁT HIỆN TRƯỜNG</span>
+        <h3 class="section-title" style="font-size:1.8rem; margin-bottom:12px;">Đặt Lịch Tư Vấn Trực Tiếp Cùng KTS Trưởng</h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:24px;">Miễn phí 100% chi phí khảo sát hiện trạng và phác thảo phương án mặt bằng sơ bộ.</p>
+
+        <form id="consultForm">
+          <div class="grid-2-col" style="gap:16px; margin-bottom:16px;">
+            <div>
+              <label class="calc-label" style="color:var(--text-main);">Họ và tên quý khách *</label>
+              <input type="text" class="calc-input" style="color:var(--text-main); border-color:var(--border-color); background:#f8fafc;" placeholder="Nguyễn Văn A" required>
+            </div>
+            <div>
+              <label class="calc-label" style="color:var(--text-main);">Số điện thoại *</label>
+              <input type="tel" class="calc-input" style="color:var(--text-main); border-color:var(--border-color); background:#f8fafc;" placeholder="0988 xxx xxx" required>
+            </div>
+          </div>
+
+          <div class="grid-2-col" style="gap:16px; margin-bottom:16px;">
+            <div>
+              <label class="calc-label" style="color:var(--text-main);">Loại hình công trình</label>
+              <select class="calc-select" style="color:var(--text-main); border-color:var(--border-color); background:#f8fafc;">
+                <option>Biệt thự biển / Villa đơn lập</option>
+                <option>Penthouse / Căn hộ cao cấp</option>
+                <option>Nhà phố / Shophouse</option>
+                <option>Khách sạn / Nhà hàng / Cafe</option>
+              </select>
+            </div>
+            <div>
+              <label class="calc-label" style="color:var(--text-main);">Địa điểm công trình</label>
+              <input type="text" class="calc-input" style="color:var(--text-main); border-color:var(--border-color); background:#f8fafc;" placeholder="Nha Trang, TP.HCM, Đà Nẵng...">
+            </div>
+          </div>
+
+          <div style="margin-bottom:24px;">
+            <label class="calc-label" style="color:var(--text-main);">Ghi chú thêm về mong muốn thiết kế</label>
+            <textarea class="calc-input" rows="3" style="color:var(--text-main); border-color:var(--border-color); background:#f8fafc;" placeholder="Phong cách ưa thích, diện tích, thời điểm dự kiến hoàn thiện..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:16px;">
+            GỬI YÊU CẦU TƯ VẤN NGAY (MIỄN PHÍ)
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom App Bar (Hiện trên màn hình điện thoại <= 768px) -->
+  <nav class="mobile-bottom-nav" id="mobileBottomNav">
+    <a href="#hero" class="mob-nav-item active" data-nav="home">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
+      <span>Trang chủ</span>
+    </a>
+    <a href="#projects" class="mob-nav-item" data-nav="projects">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      </span>
+      <span>Dự án</span>
+    </a>
+    <a href="#roomExplorer" class="mob-nav-item highlight" data-nav="room">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </span>
+      <span>3D Room</span>
+    </a>
+    <a href="#du-toan" class="mob-nav-item" data-nav="calc">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg>
+      </span>
+      <span>Dự toán</span>
+    </a>
+    <a href="#consultModal" class="mob-nav-item open-consult-modal" data-nav="consult">
+      <span class="mob-nav-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span>KTS Trưởng</span>
+    </a>
+  </nav>
+
+  <!-- Mobile Hotspot Bottom Sheet Modal (Tránh lỗi vỡ layout khi chạm ghim trên điện thoại) -->
+  <div id="mobileHotspotSheet" class="mobile-hotspot-sheet">
+    <div class="mob-hotspot-backdrop" id="mobHotspotBackdrop"></div>
+    <div class="mob-hotspot-content">
+      <button class="mob-hotspot-close" id="mobHotspotClose" aria-label="Đóng">&times;</button>
+      <div class="mob-hotspot-body">
+        <img src="" id="mobHotspotImg" class="mob-hotspot-thumb" alt="Product">
+        <div class="mob-hotspot-info">
+          <div class="mob-hotspot-badge" id="mobHotspotBadge">NỘI THẤT</div>
+          <h4 class="mob-hotspot-title" id="mobHotspotTitle">Tên sản phẩm</h4>
+          <p class="mob-hotspot-material" id="mobHotspotMaterial">Chất liệu</p>
+          <div class="mob-hotspot-footer">
+            <span class="mob-hotspot-price" id="mobHotspotPrice">0 đ</span>
+            <button class="btn-primary mob-hotspot-btn-add" id="mobHotspotAddBtn">+ Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

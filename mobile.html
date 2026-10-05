@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHALE INTERIOR — Trình Giả Lập & Trải Nghiệm Giao Diện Mobile (iPhone 16 Pro)</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0a192f;
+      --secondary: #0f2b48;
+      --accent-gold: #c5a059;
+      --accent-gold-light: #e6ca85;
+      --accent-gold-dark: #9e7d3b;
+      --bg-dark: #060e1a;
+      --titan-natural: linear-gradient(135deg, #7a7a7a 0%, #444444 50%, #999999 100%);
+      --titan-desert: linear-gradient(135deg, #bfa682 0%, #7d684c 50%, #d4c2a4 100%);
+      --titan-black: linear-gradient(135deg, #2b2b2d 0%, #171718 50%, #3e3e42 100%);
+      --titan-white: linear-gradient(135deg, #d8dbe0 0%, #a2a7b0 50%, #f0f3f8 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 30%, #0d223f 0%, #060e1a 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Studio Bar */
+    .studio-bar {
+      height: 64px;
+      padding: 0 28px;
+      background: rgba(10, 25, 47, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .studio-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--accent-gold);
+    }
+
+    .brand-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      font-size: 0.65rem;
+      color: var(--accent-gold-light);
+      letter-spacing: 0.2em;
+      display: block;
+    }
+
+    .studio-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-studio {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-studio:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: var(--accent-gold);
+    }
+
+    .btn-studio-primary {
+      background: linear-gradient(135deg, var(--accent-gold), #9e7d3b);
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35);
+    }
+
+    .btn-studio-primary:hover {
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+    }
+
+    /* Main Showcase Stage */
+    .showcase-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px 40px;
+      gap: 50px;
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* iPhone 16 Pro Container */
+    .device-wrapper {
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: center center;
+    }
+
+    .iphone-chassis {
+      width: 410px;
+      height: 846px;
+      background: #000;
+      border-radius: 56px;
+      padding: 12px;
+      position: relative;
+      box-shadow: 
+        0 0 0 4px #22252a,
+        0 0 0 8px #3b414d,
+        0 25px 70px rgba(0, 0, 0, 0.85),
+        0 10px 25px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease, border 0.3s ease;
+    }
+
+    /* Side Hardware Buttons */
+    .iphone-chassis::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 130px;
+      width: 4px;
+      height: 32px; /* Action Button */
+      background: #555c68;
+      border-radius: 4px 0 0 4px;
+      box-shadow: 
+        0 46px 0 0 #555c68, /* Volume Up */
+        0 105px 0 0 #555c68; /* Volume Down */
+    }
+
+    .iphone-chassis::after {
+      content: '';
+      position: absolute;
+      right: -11px;
+      top: 175px;
+      width: 4px;
+      height: 68px; /* Power Button */
+      background: #555c68;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Titanium Color Themes */
+    .iphone-chassis.titan-natural {
+      box-shadow: 0 0 0 4px #2d3036, 0 0 0 8px #686e7a, 0 25px 70px rgba(0,0,0,0.85);
+    }
+    .iphone-chassis.titan-desert {
+      box-shadow: 0 0 0 4px #33291c, 0 0 0 8px #948067, 0 25px 70px rgba(0,0,0,0.85);
+    }
+    .iphone-chassis.titan-black {
+      box-shadow: 0 0 0 4px #151618, 0 0 0 8px #2b2c30, 0 25px 70px rgba(0,0,0,0.85);
+    }
+    .iphone-chassis.titan-white {
+      box-shadow: 0 0 0 4px #3f434a, 0 0 0 8px #adb3be, 0 25px 70px rgba(0,0,0,0.85);
+    }
+
+    /* Screen Bezel & Display */
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border-radius: 46px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Dynamic Island */
+    .dynamic-island-wrap {
+      position: absolute;
+      top: 11px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dynamic-island {
+      width: 122px;
+      height: 32px;
+      background: #000;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .island-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent-gold-light);
+    }
+
+    .island-cam {
+      width: 11px;
+      height: 11px;
+      background: #0c1520;
+      border-radius: 50%;
+      border: 1.5px solid #1c2a38;
+      box-shadow: inset 0 0 3px #388bfd;
+    }
+
+    /* Dynamic Island Expanded State */
+    .dynamic-island.expanded {
+      width: 320px;
+      height: 72px;
+      border-radius: 28px;
+      padding: 12px 18px;
+      background: #0f172a;
+      border-color: rgba(197, 160, 89, 0.35);
+    }
+
+    .island-content-expanded {
+      display: none;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dynamic-island.expanded .island-content-expanded {
+      display: flex;
+    }
+
+    .dynamic-island.expanded .island-left,
+    .dynamic-island.expanded .island-cam {
+      display: none;
+    }
+
+    /* iOS Status Bar */
+    .ios-status-bar {
+      height: 48px;
+      padding: 0 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #0a192f;
+      z-index: 900;
+      user-select: none;
+    }
+
+    .status-time {
+      letter-spacing: -0.02em;
+    }
+
+    .status-icons {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* Mobile Browser Address Bar */
+    .mobile-browser-bar {
+      height: 38px;
+      background: #0d223f;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      z-index: 850;
+    }
+
+    .browser-url-pill {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 8px;
+      padding: 4px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #e2e8f0;
+      font-weight: 500;
+      flex: 1;
+      margin: 0 10px;
+      justify-content: center;
+    }
+
+    .browser-url-pill svg {
+      color: var(--accent-gold);
+    }
+
+    /* Iframe Screen Frame */
+    .mobile-iframe-wrapper {
+      flex: 1;
+      width: 100%;
+      position: relative;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .mobile-iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* iOS Bottom Home Bar */
+    .ios-home-indicator-wrap {
+      height: 22px;
+      background: #0a192f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 900;
+    }
+
+    .ios-home-bar {
+      width: 135px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .ios-home-bar:hover {
+      background: #fff;
+      transform: scaleY(1.3);
+    }
+
+    /* Control Center Panel (Right) */
+    .studio-panel {
+      width: 440px;
+      background: rgba(15, 34, 60, 0.55);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      border-radius: 28px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .panel-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .panel-header p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .panel-section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Titanium Finish Switcher */
+    .titanium-selector {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .titan-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 10px 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #cbd5e1;
+      font-size: 0.7rem;
+    }
+
+    .titan-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--accent-gold);
+    }
+
+    .titan-btn.active {
+      border-color: var(--accent-gold);
+      background: rgba(197, 160, 89, 0.12);
+      color: #fff;
+    }
+
+    .titan-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .circle-natural { background: #686e7a; }
+    .circle-desert { background: #948067; }
+    .circle-black { background: #26272b; }
+    .circle-white { background: #d0d5dd; }
+
+    /* Zoom Scales */
+    .zoom-selector {
+      display: flex;
+      gap: 8px;
+    }
+
+    .zoom-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .zoom-btn:hover,
+    .zoom-btn.active {
+      border-color: var(--accent-gold);
+      background: rgba(197, 160, 89, 0.15);
+      color: #fff;
+    }
+
+    /* Shortcut Actions Grid */
+    .shortcuts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .shortcut-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #e2e8f0;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .shortcut-btn:hover {
+      background: rgba(197, 160, 89, 0.12);
+      border-color: var(--accent-gold);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .shortcut-btn span:first-child {
+      font-size: 1.1rem;
+    }
+
+    /* UX Specs Card */
+    .specs-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-bottom: 6px;
+    }
+
+    .spec-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .spec-val {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* QR Code Box */
+    .qr-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.15), rgba(15, 34, 60, 0.4));
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .qr-thumb {
+      width: 58px;
+      height: 58px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-thumb svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .qr-text {
+      flex: 1;
+    }
+
+    .qr-text h4 {
+      font-size: 0.85rem;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .qr-text p {
+      font-size: 0.725rem;
+      color: #cbd5e1;
+      line-height: 1.35;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .showcase-stage {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .studio-panel {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Studio Top Bar -->
+  <header class="studio-bar">
+    <a href="index.html" class="studio-brand">
+      <svg class="brand-icon" viewBox="0 0 64 40" fill="currentColor">
+        <path d="M32 20C26 8 10 2 0 0C6 14 16 26 28 32C30 33 34 33 36 32C48 26 58 14 64 0C54 2 38 8 32 20Z"/>
+      </svg>
+      <div class="brand-text">
+        <h1>WHALE INTERIOR</h1>
+        <span>MOBILE APP STUDIO & SIMULATOR</span>
+      </div>
+    </a>
+
+    <div class="studio-actions">
+      <a href="index.html" class="btn-studio">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>Về Bản Desktop</span>
+      </a>
+      <a href="index.html" target="_blank" class="btn-studio">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <span>Mở Toàn Màn Hình</span>
+      </a>
+      <a href="Brief_Website_Whale_Interior.docx" download class="btn-studio btn-studio-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Tải Brief Word</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Showcase Stage -->
+  <main class="showcase-stage">
+    
+    <!-- iPhone 16 Pro Container -->
+    <div class="device-wrapper" id="deviceWrapper">
+      <div class="iphone-chassis titan-natural" id="iphoneChassis">
+        
+        <div class="iphone-screen">
+          
+          <!-- iOS Status Bar -->
+          <div class="ios-status-bar">
+            <span class="status-time" id="liveClock">09:41</span>
+            
+            <!-- Dynamic Island -->
+            <div class="dynamic-island-wrap">
+              <div class="dynamic-island" id="dynamicIsland" title="Bấm để mở rộng Dynamic Island">
+                <div class="island-left">
+                  <span>WHALE</span>
+                </div>
+                <div class="island-cam"></div>
+                
+                <!-- Expanded view inside island -->
+                <div class="island-content-expanded">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:1.1rem;">🌊</span>
+                    <div>
+                      <div style="font-size:0.75rem; font-weight:700; color:#fff;">Whale Soundscape</div>
+                      <div style="font-size:0.65rem; color:var(--accent-gold-light);">Đại dương tĩnh lặng · 432Hz</div>
+                    </div>
+                  </div>
+                  <div style="font-size:0.75rem; color:#10b981; font-weight:700;">ĐANG PHÁT</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Status Icons -->
+            <div class="status-icons">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+              <span style="font-size:0.7rem; font-weight:700;">5G</span>
+              <svg width="18" height="12" viewBox="0 0 24 14" fill="currentColor"><rect x="1" y="1" width="19" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="3" width="13" height="8" rx="1.5"/><rect x="21" y="5" width="2" height="4" rx="1"/></svg>
+            </div>
+          </div>
+
+          <!-- Mobile Browser URL Bar -->
+          <div class="mobile-browser-bar">
+            <button onclick="document.getElementById('mobileFrame').contentWindow.history.back()" style="background:none; border:none; color:#94a3b8; cursor:pointer;" title="Quay lại">←</button>
+            <div class="browser-url-pill">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>whaleinterior.vn</span>
+            </div>
+            <button onclick="document.getElementById('mobileFrame').contentWindow.location.reload()" style="background:none; border:none; color:#94a3b8; cursor:pointer;" title="Tải lại">↻</button>
+          </div>
+
+          <!-- Screen Web Iframe -->
+          <div class="mobile-iframe-wrapper">
+            <iframe id="mobileFrame" src="index.html" title="Whale Interior Mobile View"></iframe>
+          </div>
+
+          <!-- iOS Bottom Home Indicator -->
+          <div class="ios-home-indicator-wrap">
+            <div class="ios-home-bar" title="Cuộn lên đầu trang" onclick="scrollToTopPhone()"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Control Panel -->
+    <div class="studio-panel">
+      <div class="panel-header">
+        <h2>Trải Nghiệm Mobile App</h2>
+        <p>Mô phỏng trải nghiệm thực tế của khách hàng thượng lưu trên màn hình <strong>iPhone 16 Pro (Super Retina XDR)</strong>.</p>
+      </div>
+
+      <!-- Titanium Switcher -->
+      <div>
+        <div class="panel-section-title">
+          <span>Vỏ Máy Titan</span>
+        </div>
+        <div class="titanium-selector">
+          <button class="titan-btn active" data-titan="titan-natural">
+            <div class="titan-circle circle-natural"></div>
+            <span>Tự Nhiên</span>
+          </button>
+          <button class="titan-btn" data-titan="titan-desert">
+            <div class="titan-circle circle-desert"></div>
+            <span>Sa Mạc</span>
+          </button>
+          <button class="titan-btn" data-titan="titan-black">
+            <div class="titan-circle circle-black"></div>
+            <span>Titan Đen</span>
+          </button>
+          <button class="titan-btn" data-titan="titan-white">
+            <div class="titan-circle circle-white"></div>
+            <span>Titan Trắng</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scale / Zoom Switcher -->
+      <div>
+        <div class="panel-section-title">
+          <span>Kích Thước Khung Nhìn</span>
+        </div>
+        <div class="zoom-selector">
+          <button class="zoom-btn" data-scale="0.82">82% (Thu Nhỏ)</button>
+          <button class="zoom-btn active" data-scale="0.92">92% (Chuẩn)</button>
+          <button class="zoom-btn" data-scale="1.0">100% (Thực Tế)</button>
+        </div>
+      </div>
+
+      <!-- Quick Nav Action Buttons inside Phone -->
+      <div>
+        <div class="panel-section-title">
+          <span>Điều Hướng Nhanh Trong Điện Thoại</span>
+        </div>
+        <div class="shortcuts-grid">
+          <button class="shortcut-btn" onclick="phoneNavigate('#hero')">
+            <span>🏠</span>
+            <span>Trang Chủ</span>
+          </button>
+          <button class="shortcut-btn" onclick="phoneNavigate('#projects')">
+            <span>🏛️</span>
+            <span>Dự Án Editorial</span>
+          </button>
+          <button class="shortcut-btn" onclick="phoneNavigate('#roomExplorer')">
+            <span>🔍</span>
+            <span>Room Explorer 3D</span>
+          </button>
+          <button class="shortcut-btn" onclick="phoneNavigate('#du-toan')">
+            <span>🧮</span>
+            <span>Dự Toán Mộc</span>
+          </button>
+          <button class="shortcut-btn" onclick="phoneOpenCart()">
+            <span>🛒</span>
+            <span>Giỏ Hàng Mẫu</span>
+          </button>
+          <button class="shortcut-btn" onclick="phoneOpenConsult()">
+            <span>📞</span>
+            <span>Đặt Lịch KTS</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- UX Specs -->
+      <div class="specs-card">
+        <div class="spec-row">
+          <span>Độ phân giải hiển thị:</span>
+          <span class="spec-val">393 × 852 px (19.5:9)</span>
+        </div>
+        <div class="spec-row">
+          <span>Thanh điều hướng:</span>
+          <span class="spec-val">Fixed Bottom Bar (Thumb Zone)</span>
+        </div>
+        <div class="spec-row">
+          <span>Tương tác Hotspot 3D:</span>
+          <span class="spec-val">Mobile Bottom-Sheet Modal</span>
+        </div>
+        <div class="spec-row">
+          <span>Tốc độ khung hình:</span>
+          <span class="spec-val">60 fps GPU Hardware Acceleration</span>
+        </div>
+      </div>
+
+      <!-- QR Code Simulation -->
+      <div class="qr-banner">
+        <div class="qr-thumb">
+          <!-- SVG QR Code Vector -->
+          <svg viewBox="0 0 100 100" fill="#0a192f">
+            <rect x="10" y="10" width="25" height="25" rx="3" fill="#0a192f"/>
+            <rect x="15" y="15" width="15" height="15" fill="#fff"/>
+            <rect x="18" y="18" width="9" height="9" fill="#0a192f"/>
+            <rect x="65" y="10" width="25" height="25" rx="3" fill="#0a192f"/>
+            <rect x="70" y="15" width="15" height="15" fill="#fff"/>
+            <rect x="73" y="18" width="9" height="9" fill="#0a192f"/>
+            <rect x="10" y="65" width="25" height="25" rx="3" fill="#0a192f"/>
+            <rect x="15" y="70" width="15" height="15" fill="#fff"/>
+            <rect x="18" y="73" width="9" height="9" fill="#0a192f"/>
+            <rect x="42" y="15" width="8" height="8"/>
+            <rect x="48" y="30" width="8" height="8"/>
+            <rect x="65" y="45" width="8" height="8"/>
+            <rect x="42" y="65" width="8" height="8"/>
+            <rect x="75" y="75" width="12" height="12"/>
+          </svg>
+        </div>
+        <div class="qr-text">
+          <h4>Mở Trực Tiếp Trên Smartphone Thật</h4>
+          <p>Website hoàn toàn tương thích và co giãn mượt mà khi mở trên Safari (iOS) và Chrome (Android).</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    // 1. Live Digital Clock in Status Bar
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const clockEl = document.getElementById('liveClock');
+      if (clockEl) clockEl.textContent = `${hours}:${minutes}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // 2. Titanium Chassis Switcher
+    const titanBtns = document.querySelectorAll('.titan-btn');
+    const chassis = document.getElementById('iphoneChassis');
+
+    titanBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        titanBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const theme = btn.getAttribute('data-titan');
+        chassis.className = 'iphone-chassis ' + theme;
+      });
+    });
+
+    // 3. Zoom / Scale Switcher
+    const zoomBtns = document.querySelectorAll('.zoom-btn');
+    const deviceWrapper = document.getElementById('deviceWrapper');
+
+    // Default 92%
+    deviceWrapper.style.transform = 'scale(0.92)';
+
+    zoomBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        zoomBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const scale = btn.getAttribute('data-scale');
+        deviceWrapper.style.transform = `scale(${scale})`;
+      });
+    });
+
+    // 4. Dynamic Island Expand/Collapse
+    const dynamicIsland = document.getElementById('dynamicIsland');
+    dynamicIsland.addEventListener('click', () => {
+      dynamicIsland.classList.toggle('expanded');
+    });
+
+    // 5. Shortcuts to Navigate Inside Iframe
+    function getIframeDoc() {
+      const iframe = document.getElementById('mobileFrame');
+      return iframe.contentDocument || iframe.contentWindow.document;
+    }
+
+    function phoneNavigate(selector) {
+      try {
+        const doc = getIframeDoc();
+        const target = doc.querySelector(selector);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (e) {
+        document.getElementById('mobileFrame').src = 'index.html' + selector;
+      }
+    }
+
+    function phoneOpenCart() {
+      try {
+        const doc = getIframeDoc();
+        const cartBtn = doc.getElementById('cartOpenBtn');
+        if (cartBtn) cartBtn.click();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function phoneOpenConsult() {
+      try {
+        const doc = getIframeDoc();
+        const consultBtns = doc.querySelectorAll('.open-consult-modal');
+        if (consultBtns.length > 0) consultBtns[0].click();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function scrollToTopPhone() {
+      try {
+        const iframeWindow = document.getElementById('mobileFrame').contentWindow;
+        iframeWindow.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  </script>
+</body>
+</html>
